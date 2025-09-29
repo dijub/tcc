@@ -1,0 +1,21 @@
+services:
+  db:
+    container_name: db
+    image: postgres:15
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=12345678
+      - POSTGRES_DB=db
+    command: >
+      postgres -c shared_buffers=200MB
+               -c work_mem=8MB
+               -c effective_cache_size=300MB
+               -c max_connections=20
+    restart: always
+    ports:
+      - 5432:5432
+volumes:
+  postgres_data:
+    driver: local

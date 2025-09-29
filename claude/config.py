@@ -1,6 +1,6 @@
 import os
 from typing import Optional
-from pydantic import BaseSettings
+from pydantic_settings import BaseSettings
 
 class DatabaseSettings(BaseSettings):
     """
@@ -9,8 +9,8 @@ class DatabaseSettings(BaseSettings):
     db_host: str = "localhost"
     db_port: int = 5432
     db_user: str = "postgres"
-    db_password: str = ""
-    db_name: str = "myapp"
+    db_password: str = "12345678"
+    db_name: str = "db"
     db_echo: bool = False
     
     # Pool de conexões

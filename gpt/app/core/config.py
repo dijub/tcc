@@ -1,8 +1,7 @@
 from functools import lru_cache
 from typing import Optional
 
-from pydantic import BaseSettings, PostgresDsn, validator
-
+from pydantic import PostgresDsn, validator, BaseSettings
 
 class Settings(BaseSettings):
     """
@@ -10,9 +9,9 @@ class Settings(BaseSettings):
     """
     POSTGRES_HOST: str = "localhost"
     POSTGRES_PORT: int = 5432
-    POSTGRES_DB: str
-    POSTGRES_USER: str
-    POSTGRES_PASSWORD: str
+    POSTGRES_DB: str = 'db'
+    POSTGRES_USER: str = 'postgres'
+    POSTGRES_PASSWORD: str = '12345678'
 
     # Permite apontar para DATABASE_URL pronto (ex.: render, heroku...)
     SQLALCHEMY_DATABASE_URI: Optional[PostgresDsn] = None
