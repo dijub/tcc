@@ -1,10 +1,5 @@
-from app.core.database import SessionLocal, Base
-from sqlalchemy import text
-from app.models.cliente import Cliente
+from app.main import app
+import uvicorn 
 
-db = SessionLocal()
 
-Base.metadata.create_all(bind=db.bind)
-print(db.execute(text("SELECT version()")).fetchone())
-
-db.close()
+uvicorn.run(app, host="0.0.0.0", port=8000)

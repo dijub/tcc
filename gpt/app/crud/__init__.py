@@ -1,4 +1,4 @@
-from app.crud.cliente import CRUDCliente
+1from app.crud.cliente import CRUDCliente
 
 cliente_crud = CRUDCliente()
 

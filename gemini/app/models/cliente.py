@@ -21,3 +21,5 @@ class Cliente(Base):
     email: str = Column(String(100), unique=True, index=True, nullable=False)
     telefone: str = Column(String(20), nullable=False)
     data_criacao: datetime.datetime = Column(DateTime, default=datetime.datetime.utcnow)
+
+
